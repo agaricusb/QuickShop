@@ -226,16 +226,6 @@ public class Util{
 	 */
 	public static String getName(ItemStack i){
 		String vanillaName = getDataName(i.getType(), i.getDurability());
-		if(plugin.useSpout){
-			org.getspout.spoutapi.inventory.SpoutItemStack spoutItemStack = new org.getspout.spoutapi.inventory.SpoutItemStack(i);
-			String spoutName = null;
-			try{
-				spoutName = spoutItemStack.getMaterial().getName();
-				if(spoutName.length() > vanillaName.length() || vanillaName.contains(":")){
-					return prettifyText(spoutName);
-				}
-			} catch(Exception e){ }
-		}
 		return prettifyText(vanillaName);
 	}
 	
